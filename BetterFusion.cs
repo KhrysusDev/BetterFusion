@@ -11,7 +11,6 @@ namespace BetterFusion
 {
     // Better Fusion made by Khrysus
     // I made this because I saw it wasn't async, I improved it by splitting the classes and also turning them into structs so they are faster
-    // This is private don't spread this shit because I don't want to help Fusion, I made this to help us not Fusion.
     public struct BetterFusionApp
     {
         private readonly static HttpClient client = new HttpClient();
