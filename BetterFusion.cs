@@ -13,7 +13,7 @@ namespace BetterFusion
     // I made this because I saw it wasn't async, I improved it by splitting the classes and also turning them into structs so they are faster
     public struct BetterFusionApp
     {
-        private readonly static HttpClient client = new HttpClient();
+        private readonly static HttpClient client = null;
         public static string baseurl = null;
         public static string executeurl = null;
         private static string session;
@@ -21,8 +21,13 @@ namespace BetterFusion
 
         public BetterFusionApp(string App)
         {
-            if (baseurl == null)
+            if (client == null)
             {
+                var handler = new HttpClientHandler()
+                {
+                    Proxy = null
+                };
+                client = new HttpClient(handler);
                 baseurl = $"{url}app/{App}/api";
             }
         }
