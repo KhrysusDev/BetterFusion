@@ -13,7 +13,7 @@ namespace BetterFusion
     // I made this because I saw it wasn't async, I improved it by splitting the classes and also turning them into structs so they are faster
     public struct BetterFusionApp
     {
-        private readonly HttpClient client = null;
+        private static readonly HttpClient client = null;
         public static string baseurl = null;
         public static string executeurl = null;
         private static string session;
@@ -69,7 +69,7 @@ namespace BetterFusion
         public static async Task<string> GetIp()
         {
             var webResponse = await client.GetAsync("https://api.ipify.org");
-            return responsePayload = await webResponse.Content.ReadAsStringAsync();
+            return await webResponse.Content.ReadAsStringAsync();
         }
         public static async Task<string> GetHwid()
         {
