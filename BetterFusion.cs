@@ -68,10 +68,8 @@ namespace BetterFusion
         }
         public static async Task<string> GetIp()
         {
-            var webResponse = await client.GetAsync("https://api.ipify.org/?format=json");
-            var responsePayload = await webResponse.Content.ReadAsStringAsync();
-            var obj = JsonConvert.DeserializeObject<BetterFusionObjects.IpObject>(responsePayload);
-            return obj.IpAddress;
+            var webResponse = await client.GetAsync("https://api.ipify.org");
+            return responsePayload = await webResponse.Content.ReadAsStringAsync();
         }
         public static async Task<string> GetHwid()
         {
