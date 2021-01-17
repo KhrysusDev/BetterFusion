@@ -28,11 +28,6 @@ namespace BetterFusion
             [JsonProperty("expiry")] public string Expiry { get; set; }
         }
 
-        public struct IpObject
-        {
-            [JsonProperty("ip")] public string IpAddress { get; set; }
-        }
-
         public struct BetterFusionResponse
         {
             public bool Error { get; set; }
